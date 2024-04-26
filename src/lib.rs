@@ -123,7 +123,7 @@ cfg_if! {
 
         mod solid;
         pub use solid::*;
-    } else if #[cfg(unix)] {
+    } else if #[cfg(all(unix, not(target_os = "popcorn")))] {
         mod fixed_width_ints;
         pub use fixed_width_ints::*;
 
